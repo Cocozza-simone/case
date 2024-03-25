@@ -1,0 +1,68 @@
+ /* You can add global styles to this file, and also import other style files */
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 460;
+  
+    color-scheme: light dark;
+    
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(120deg);
+    }
+  }
+  .logo {
+    width: 90px;
+    height: 90px;   
+    position: absolute;
+    top: 0px;
+  
+  }
+      
+  .logo:hover {
+    animation: logo-spin infinite 33s linear;
+    
+  }
+  a {
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #7e00f3;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    min-height: 100vh;
+    text-align: center;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #11b6df, #00ffc8,#006eff);
+  }
+  
+  h1 {
+    font-style: arial;
+    font-size: 6.2em;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+  }
+  
+
+  
+  
+html, body { height: 100%; }
+

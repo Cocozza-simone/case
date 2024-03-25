@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "case-36ae0": {
+      "hosting": {
+        "case": [
+          "case-36ae0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "case-36ae0"
+  }
+}

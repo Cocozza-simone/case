@@ -1,0 +1,28 @@
+<div class="accesso-sito-container">
+    <!-- Form per aggiungere una nuova credenziale -->
+    <form (submit)="aggiungiCredenziale()" class="aggiungi-credenziale-form">
+      <h2>Aggiungi Credenziale</h2>
+      <label>Email:</label>
+      <input type="email" (ngModel)="nuovoEmail" name="email" required>
+      <label>Password:</label>
+      <input type="password" (ngModel)="nuovaPassword" name="password" required>
+      <label>Privilegi:</label>
+      <input type="text" (ngModel)="nuoviPrivilegi" name="privilegi">
+      <button type="submit">Aggiungi</button>
+    </form>
+  
+    <!-- Elenco delle credenziali -->
+    <div class="credenziali-list">
+      <h2>Credenziali</h2>
+      <ul>
+        <li *ngFor="let credenziale of credenziali">
+          <div>ID: {{ credenziale.id }}</div>
+          <div>Email: {{ credenziale.email }}</div>
+          <div>Password: {{ credenziale.password }}</div>
+          <div>Privilegi: {{ credenziale.privilegi }}</div>
+          <button (click)="eliminaCredenziale(credenziale.id)">Elimina</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "case",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "europe-west1"
+      }
+    }
+  ]
+}

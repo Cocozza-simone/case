@@ -1,0 +1,90 @@
+/* Stile del contenitore del form di login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 280px;
+  margin: 0;
+  
+  
+  .forgot-password-link[_ngcontent-ng-c3454058232] {
+    margin-top: -20px;
+    padding-bottom: 20px;
+}
+  // Stile dei form di login e registrazione
+  .login-form, .registration-form {
+    width: 100%;
+   
+   
+    // Stile dei campi del form
+    .form-field {
+      margin-bottom: 30px; // Maggiore spazio tra i campi per una migliore esperienza utente
+
+      .mat-form-field-flex {
+        border-radius: 25px; // Angoli arrotondati per una sensazione più amichevole
+      }
+
+      input {
+        font-size: 15px; // Testo più grande per una migliore leggibilità
+        padding: 12px 12px; // Più spazio intorno al testo per un aspetto più invitante
+        border-radius: 25px; // Angoli arrotondati per un tocco di modernità
+      }
+
+      .mat-form-field-wrapper {
+        padding-bottom: 1em; 
+      }
+    }
+
+    // Stile dei messaggi di errore
+    .mat-error {
+      color: #f44336; // Rosso acceso per messaggi di errore che catturano l'attenzione
+    }
+
+    // Stile dei pulsanti
+    button {
+      margin-top: 15px; // Maggiore spazio sopra il pulsante per una maggiore enfasi
+      padding: 4px 0; // Padding leggermente ridotto per un aspetto più snello
+      border-radius: 25px; // Pulsanti con angoli arrotondati per una sensazione accogliente
+      font-size: 20px; // Testo più grande per un'impatto visivo maggiore
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Ombra più marcata per un effetto più definito
+    }
+  }
+
+  // Stile del link per il recupero della password
+  .forgot-password-link {
+    margin-top: 20px; // Leggermente ridotto per una migliore disposizione
+    a {
+      color: #1976d2;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Stile dei pulsanti generici
+  button {
+    width: 100%;
+
+    // Stile del pulsante di login e del pulsante di registrazione
+    &.login-button, &.register-button {
+      background-color: #6200ea; // Colore principale più vivace per un aspetto più giovanile
+      color: rgb(255, 255, 255);
+      &:hover {
+        background-color: darken(#6200ea, 15%); // Effetto di scurimento leggero al passaggio del mouse
+      }
+    }
+
+    // Stile del pulsante di toggle
+    &.toggle-button {
+      background-color: transparent;
+      color: #6200ea;
+      border: 2px solid #6200ea; // Bordo più spesso per un aspetto più robusto
+      &:hover {
+        background-color: rgba(#6200ea, 0.1); // Leggera trasparenza al passaggio del mouse
+      }
+    }
+  }
+}

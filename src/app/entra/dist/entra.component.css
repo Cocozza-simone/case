@@ -1,0 +1,69 @@
+/* Stile del contenitore del form di login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 280px;
+  margin: 0;
+}
+.login-container .forgot-password-link[_ngcontent-ng-c3454058232] {
+  margin-top: -20px;
+  padding-bottom: 20px;
+}
+.login-container .login-form, .login-container .registration-form {
+  width: 100%;
+}
+.login-container .login-form .form-field, .login-container .registration-form .form-field {
+  margin-bottom: 30px;
+}
+.login-container .login-form .form-field .mat-form-field-flex, .login-container .registration-form .form-field .mat-form-field-flex {
+  border-radius: 25px;
+}
+.login-container .login-form .form-field input, .login-container .registration-form .form-field input {
+  font-size: 15px;
+  padding: 12px 12px;
+  border-radius: 25px;
+}
+.login-container .login-form .form-field .mat-form-field-wrapper, .login-container .registration-form .form-field .mat-form-field-wrapper {
+  padding-bottom: 1em;
+}
+.login-container .login-form .mat-error, .login-container .registration-form .mat-error {
+  color: #f44336;
+}
+.login-container .login-form button, .login-container .registration-form button {
+  margin-top: 15px;
+  padding: 4px 0;
+  border-radius: 25px;
+  font-size: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.login-container .forgot-password-link {
+  margin-top: 20px;
+}
+.login-container .forgot-password-link a {
+  color: #1976d2;
+  text-decoration: none;
+}
+.login-container .forgot-password-link a:hover {
+  text-decoration: underline;
+}
+.login-container button {
+  width: 100%;
+}
+.login-container button.login-button, .login-container button.register-button {
+  background-color: #6200ea;
+  color: white;
+}
+.login-container button.login-button:hover, .login-container button.register-button:hover {
+  background-color: #42009e;
+}
+.login-container button.toggle-button {
+  background-color: transparent;
+  color: #6200ea;
+  border: 2px solid #6200ea;
+}
+.login-container button.toggle-button:hover {
+  background-color: rgba(98, 0, 234, 0.1);
+}

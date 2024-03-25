@@ -25,7 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css",
+              "src/styles.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -60,13 +62,16 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "case:build"
+          },
           "configurations": {
             "production": {
               "buildTarget": "case:build:production"
             },
             "development": {
               "buildTarget": "case:build:development"
-            }
+ }
           },
           "defaultConfiguration": "development"
         },
@@ -89,12 +94,35 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "case:build:production",
+              "serveTarget": "case:serve:production"
+            },
+            "development": {
+              "buildTarget": "case:build:development",
+              "serveTarget": "case:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "41584b29-f596-4360-a44b-ba885faf9657"
   }
+
 }
+
