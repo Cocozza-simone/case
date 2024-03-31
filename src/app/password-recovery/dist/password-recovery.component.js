@@ -7,19 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.PasswordRecoveryComponent = void 0;
-var forms_1 = require("@angular/forms");
 var core_1 = require("@angular/core");
-var forms_2 = require("@angular/forms");
+var rxjs_1 = require("rxjs");
+var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
-var input_1 = require("@angular/material/input"); // Import MatInputModule from the correct package
-var button_1 = require("@angular/material/button"); // Import MatButtonModule from the correct package
-var form_field_1 = require("@angular/material/form-field"); // Import MatFormFieldModule from the correct package
+var button_1 = require("@angular/material/button");
+var form_field_1 = require("@angular/material/form-field");
+var input_1 = require("@angular/material/input");
 var PasswordRecoveryComponent = /** @class */ (function () {
-    function PasswordRecoveryComponent(formBuilder, authService) {
+    function PasswordRecoveryComponent(formBuilder) {
         this.formBuilder = formBuilder;
-        this.authService = authService;
-        this.step = 'email';
-        this.emailSent = false;
+        this.step = 'email'; // Inizialmente mostra il passo di inserimento dell'email
+        this.userSubject = new rxjs_1.BehaviorSubject(false); // Simulazione utente autenticato
+        this.user$ = this.userSubject.asObservable();
         this.recoveryForm = this.formBuilder.group({
             email: ['', [forms_1.Validators.required, forms_1.Validators.email]]
         });
@@ -31,57 +31,63 @@ var PasswordRecoveryComponent = /** @class */ (function () {
             confirmPassword: ['', forms_1.Validators.required]
         }, { validator: this.passwordMatchValidator });
     }
-    PasswordRecoveryComponent.prototype.sendRecoveryEmail = function () {
-        var _this = this;
-        var _a;
-        var email = (_a = this.recoveryForm.get('email')) === null || _a === void 0 ? void 0 : _a.value;
-        if (email) {
-            this.authService.sendRecoveryEmail(email).subscribe(function () {
-                _this.emailSent = true;
-                _this.step = 'code';
-            }, function (error) {
-                console.error('Errore durante l\'invio dell\'email di recupero:', error);
-            });
+    PasswordRecoveryComponent.prototype.ngOnInit = function () {
+        // Inizializzazione dei form
+        this.recoveryForm = this.formBuilder.group({
+            email: ['', [forms_1.Validators.required, forms_1.Validators.email]]
+        });
+        this.codeConfirmationForm = this.formBuilder.group({
+            code: ['', forms_1.Validators.required]
+        });
+        this.newPasswordForm = this.formBuilder.group({
+            password: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6)]],
+            confirmPassword: ['', forms_1.Validators.required]
+        }, { validator: this.passwordMatchValidator });
+    };
+    PasswordRecoveryComponent.prototype.sendRecoveryEmail = function (email) {
+        // Simula l'invio dell'email di recupero
+        console.log('Simulazione: Email di recupero inviata a', email);
+        return rxjs_1.of(true); // Simula una risposta positiva
+    };
+    PasswordRecoveryComponent.prototype.confirmCode = function (code) {
+        // Simula la conferma del codice di recupero
+        console.log('Simulazione: Codice di recupero confermato');
+        return rxjs_1.of(true); // Simula una risposta positiva
+    };
+    PasswordRecoveryComponent.prototype.resetPassword = function (password) {
+        // Simula il reset della password
+        console.log('Simulazione: Password resettata con successo');
+        return rxjs_1.of(true); // Simula una risposta positiva
+    };
+    PasswordRecoveryComponent.prototype.login = function (email, password) {
+        // Simula il login con successo se le credenziali corrispondono
+        if (email === 'example@example.com' && password === 'password') {
+            this.userSubject.next(true); // Simula l'utente autenticato
+            return rxjs_1.of({ success: true });
+        }
+        else {
+            return rxjs_1.throwError({ success: false, message: 'Credenziali non valide' });
         }
     };
-    PasswordRecoveryComponent.prototype.confirmCode = function () {
-        var _this = this;
-        var _a;
-        var code = (_a = this.codeConfirmationForm.get('code')) === null || _a === void 0 ? void 0 : _a.value;
-        if (code) {
-            this.authService.confirmCode(code).subscribe(function () {
-                _this.step = 'password';
-            }, function (error) {
-                console.error('Codice di conferma non valido:', error);
-            });
-        }
+    // Questo metodo può essere utilizzato per simulare il logout
+    PasswordRecoveryComponent.prototype.logout = function () {
+        this.userSubject.next(false); // Simula il logout
+        return rxjs_1.of(true); // Simula una risposta positiva
     };
-    PasswordRecoveryComponent.prototype.createNewPassword = function () {
-        var _a;
-        var password = (_a = this.newPasswordForm.get('password')) === null || _a === void 0 ? void 0 : _a.value;
-        if (password) {
-            this.authService.resetPassword(password).subscribe(function () {
-                console.log('Password resettata con successo.');
-            }, function (error) {
-                console.error('Errore durante il reset della password:', error);
-            });
-        }
-    };
-    PasswordRecoveryComponent.prototype.passwordMatchValidator = function (formGroup) {
-        var _a, _b, _c;
-        var password = (_a = formGroup.get('password')) === null || _a === void 0 ? void 0 : _a.value;
-        var confirmPassword = (_b = formGroup.get('confirmPassword')) === null || _b === void 0 ? void 0 : _b.value;
-        if (password !== confirmPassword) {
-            (_c = formGroup.get('confirmPassword')) === null || _c === void 0 ? void 0 : _c.setErrors({ passwordMismatch: true });
-        }
-    };
+    PasswordRecoveryComponent.prototype.createNewPassword = function () { };
     PasswordRecoveryComponent = __decorate([
         core_1.Component({
             selector: 'app-password-recovery',
             standalone: true,
-            imports: [forms_2.ReactiveFormsModule, common_1.CommonModule, input_1.MatInputModule, button_1.MatButtonModule, form_field_1.MatFormFieldModule],
+            imports: [
+                forms_1.ReactiveFormsModule,
+                common_1.CommonModule,
+                input_1.MatInputModule,
+                button_1.MatButtonModule,
+                form_field_1.MatFormFieldModule,
+            ],
             templateUrl: './password-recovery.component.html',
-            styleUrls: ['./password-recovery.component.css'] // Corretto in styleUrls in forma plurale
+            styleUrls: ['./password-recovery.component.scss']
         })
     ], PasswordRecoveryComponent);
     return PasswordRecoveryComponent;

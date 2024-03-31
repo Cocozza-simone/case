@@ -7,33 +7,38 @@
   padding: 20px;
   max-width: 280px;
   margin: 0;
-  
-  
-  .forgot-password-link[_ngcontent-ng-c3454058232] {
-    margin-top: -20px;
-    padding-bottom: 20px;
-}
+  background: #ffffff;
+  border-radius: 20px;
+
   // Stile dei form di login e registrazione
-  .login-form, .registration-form {
-    width: 100%;
-   
-   
+  .login-form {
+
+    mat-form-field {
+      width: 70%;
+
+
+    }
+
     // Stile dei campi del form
     .form-field {
-      margin-bottom: 30px; // Maggiore spazio tra i campi per una migliore esperienza utente
+      margin-bottom: 25px; // Maggiore spazio tra i campi per una migliore esperienza utente
 
       .mat-form-field-flex {
-        border-radius: 25px; // Angoli arrotondati per una sensazione più amichevole
+        border-radius: 30px;
       }
 
       input {
         font-size: 15px; // Testo più grande per una migliore leggibilità
-        padding: 12px 12px; // Più spazio intorno al testo per un aspetto più invitante
-        border-radius: 25px; // Angoli arrotondati per un tocco di modernità
+        padding: 1px 1px;
+        // Più spazio intorno al testo per un aspetto più invitante
+        // Angoli arrotondati per un tocco di modernità
+        color: #000000;
+
       }
 
       .mat-form-field-wrapper {
-        padding-bottom: 1em; 
+        padding-bottom: 1em;
+
       }
     }
 
@@ -52,12 +57,16 @@
     }
   }
 
+ 
   // Stile del link per il recupero della password
   .forgot-password-link {
-    margin-top: 20px; // Leggermente ridotto per una migliore disposizione
+    margin-top: -40px;
+    margin-bottom: 20px; // Leggermente ridotto per una migliore disposizione
+
     a {
       color: #1976d2;
       text-decoration: none;
+
       &:hover {
         text-decoration: underline;
       }
@@ -69,22 +78,75 @@
     width: 100%;
 
     // Stile del pulsante di login e del pulsante di registrazione
-    &.login-button, &.register-button {
+    &.login-button,
+    &.register-button {
+      display: flex;
       background-color: #6200ea; // Colore principale più vivace per un aspetto più giovanile
-      color: rgb(255, 255, 255);
+
+
       &:hover {
-        background-color: darken(#6200ea, 15%); // Effetto di scurimento leggero al passaggio del mouse
+        background-color: darken(#6200ea,
+            15%); // Effetto di scurimento leggero al passaggio del mouse
       }
     }
 
     // Stile del pulsante di toggle
     &.toggle-button {
+      position: relative;
+      bottom: -20px;
+      /* Distanza dal basso */
+      right: -80px;
+      /* Distanza dalla destra */
       background-color: transparent;
       color: #6200ea;
-      border: 2px solid #6200ea; // Bordo più spesso per un aspetto più robusto
+      border: none;
+      width: 6%;
+
+      // Spazio aggiunto per un aspetto più bilanciato
       &:hover {
-        background-color: rgba(#6200ea, 0.1); // Leggera trasparenza al passaggio del mouse
+        color: darken(#130427,
+            15%); // Leggera trasparenza al passaggio del mouse
+        transition: background 01.51s ease;
+        background: #ffffff;
       }
     }
+
+
   }
+}
+
+.bn39 {
+  background-image: linear-gradient(135deg, #008aff, #86d472);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: inline-block;
+  height: 50px;
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: 4px;
+  position: relative;
+  text-decoration: none;
+  width: 7em;
+  z-index: 2;
+
+}
+
+.bn39:hover {
+  color: #fff;
+}
+
+.bn39 .bn39span {
+  align-items: center;
+  background: #0e0e10;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+}
+
+.bn39:hover .bn39span {
+  background: transparent;
 }

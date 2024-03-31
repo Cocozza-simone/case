@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './entra-list.component.html',
-  styleUrl: './entra-list.component.css'
+  styleUrl: './entra-list.component.scss'
 })
 export class EntraListComponent {
 

@@ -3,26 +3,21 @@
   <form *ngIf="showLoginForm" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()" class="login-form">
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Email</mat-label>
-      <input placeholder="Email" matInput type="email" formControlName="email" required autocomplete="email"
+      <input placeholder="Email" matInput type="email" formControlName="email" autocomplete="email"
         class="input-field col s12">
-      <mat-error *ngIf="loginForm.get('Email')?.hasError('required')">Email richiesta</mat-error>
-      <mat-error *ngIf="loginForm.get('Email')?.hasError('email')">Email non valida</mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Email non valida</mat-error>
     </mat-form-field>
-
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Password</mat-label>
-      <input placeholder="Password" matInput type="password" formControlName="password" required
-        autocomplete="current-password" class="input-field col s12">
-      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password richiesta</mat-error>
+      <input placeholder="Password" matInput type="password" formControlName="password" autocomplete="current-password"
+        class="input-field col s12">
     </mat-form-field>
-
     <div class="forgot-password-link" *ngIf="showLoginForm">
-      <!-- Utilizza un bottone o un link con un evento click per chiamare la funzione openPasswordRecoveryDialog() -->
       <button mat-button (click)="openPasswordRecoveryDialog()">Password dimenticata?</button>
     </div>
-
-    <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid"
-      class="login-button">Accedi</button>
+    <a [attr.href]="loginForm.valid ? '/' : null" class="bn39 bn39span" (click)="loginForm.valid && onLoginSubmit()">
+      <span class="bn39span">Accedi</span>
+    </a>
   </form>
 
   <!-- Form di Registrazione -->
@@ -59,19 +54,20 @@
 
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Conferma Password</mat-label>
-      <input placeholder="ConfirmPassword" matInput type="password" formControlName="confirmPassword" required
+      <input placeholder="Conferma Password" matInput type="password" formControlName="confirmPassword" required
         class="input-field col s12">
       <mat-error *ngIf="registrationForm.get('confirmPassword')?.hasError('required')">Conferma password
         richiesta</mat-error>
       <mat-error *ngIf="registrationForm.hasError('passwordMismatch')">Le password non corrispondono</mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid"
-      class="register-button">Registrati</button>
+    <a [attr.href]="registrationForm.valid ? '/' : null" class="bn39 bn39span"
+      (click)="registrationForm.valid && onRegistrationSubmit()">
+      <span class="bn39span">Registrati</span>
+    </a>
   </form>
 
   <!-- Pulsante per cambiare tra il form di login e il form di registrazione -->
-  <button mat-raised-button color="primary" (click)="toggleLoginForm()" class="toggle-button">
-    {{ showLoginForm ? 'Non hai un account? Registrati' : 'Hai già un account? Accedi' }}
-  </button>
+  <button (click)="toggleLoginForm()" class="toggle-button">{{ showLoginForm ? 'Registrati' : 'Accedi' }}</button>
+
 </div>

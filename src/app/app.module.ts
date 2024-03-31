@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { PasswordRecoveryComponent } from './password-recovery/password-recovery.component';
 @NgModule({
   declarations: [
     // Rimuovi AppComponent dalle dichiarazioni
@@ -26,6 +27,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+     
   ],
   providers: [],
 })

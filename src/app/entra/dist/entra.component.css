@@ -7,32 +7,30 @@
   padding: 20px;
   max-width: 280px;
   margin: 0;
+  background: #ffffff;
+  border-radius: 20px;
 }
-.login-container .forgot-password-link[_ngcontent-ng-c3454058232] {
-  margin-top: -20px;
-  padding-bottom: 20px;
+.login-container .login-form mat-form-field {
+  width: 70%;
 }
-.login-container .login-form, .login-container .registration-form {
-  width: 100%;
+.login-container .login-form .form-field {
+  margin-bottom: 25px;
 }
-.login-container .login-form .form-field, .login-container .registration-form .form-field {
-  margin-bottom: 30px;
+.login-container .login-form .form-field .mat-form-field-flex {
+  border-radius: 30px;
 }
-.login-container .login-form .form-field .mat-form-field-flex, .login-container .registration-form .form-field .mat-form-field-flex {
-  border-radius: 25px;
-}
-.login-container .login-form .form-field input, .login-container .registration-form .form-field input {
+.login-container .login-form .form-field input {
   font-size: 15px;
-  padding: 12px 12px;
-  border-radius: 25px;
+  padding: 1px 1px;
+  color: #000000;
 }
-.login-container .login-form .form-field .mat-form-field-wrapper, .login-container .registration-form .form-field .mat-form-field-wrapper {
+.login-container .login-form .form-field .mat-form-field-wrapper {
   padding-bottom: 1em;
 }
-.login-container .login-form .mat-error, .login-container .registration-form .mat-error {
+.login-container .login-form .mat-error {
   color: #f44336;
 }
-.login-container .login-form button, .login-container .registration-form button {
+.login-container .login-form button {
   margin-top: 15px;
   padding: 4px 0;
   border-radius: 25px;
@@ -40,7 +38,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 .login-container .forgot-password-link {
-  margin-top: 20px;
+  margin-top: -40px;
+  margin-bottom: 20px;
 }
 .login-container .forgot-password-link a {
   color: #1976d2;
@@ -53,17 +52,60 @@
   width: 100%;
 }
 .login-container button.login-button, .login-container button.register-button {
+  display: flex;
   background-color: #6200ea;
-  color: white;
 }
 .login-container button.login-button:hover, .login-container button.register-button:hover {
   background-color: #42009e;
 }
 .login-container button.toggle-button {
+  position: relative;
+  bottom: -20px;
+  /* Distanza dal basso */
+  right: -80px;
+  /* Distanza dalla destra */
   background-color: transparent;
   color: #6200ea;
-  border: 2px solid #6200ea;
+  border: none;
+  width: 6%;
 }
 .login-container button.toggle-button:hover {
-  background-color: rgba(98, 0, 234, 0.1);
+  color: black;
+  transition: background 1.51s ease;
+  background: #ffffff;
+}
+
+.bn39 {
+  background-image: linear-gradient(135deg, #008aff, #86d472);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: inline-block;
+  height: 50px;
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: 4px;
+  position: relative;
+  text-decoration: none;
+  width: 7em;
+  z-index: 2;
+}
+
+.bn39:hover {
+  color: #fff;
+}
+
+.bn39 .bn39span {
+  align-items: center;
+  background: #0e0e10;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+}
+
+.bn39:hover .bn39span {
+  background: transparent;
 }

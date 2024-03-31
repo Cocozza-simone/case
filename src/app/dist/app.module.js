@@ -13,21 +13,22 @@ var compat_1 = require("@angular/fire/compat");
 var environment_1 = require("./environments/environment");
 var firestore_1 = require("@angular/fire/compat/firestore");
 var auth_1 = require("@angular/fire/compat/auth");
-var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
 var http_1 = require("@angular/common/http");
 var button_1 = require("@angular/material/button");
 var form_field_1 = require("@angular/material/form-field");
 var input_1 = require("@angular/material/input");
 var common_1 = require("@angular/common");
-var forms_1 = require("@angular/forms");
+var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            declarations: [],
-            imports: [platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
+            declarations: [
+            // Rimuovi AppComponent dalle dichiarazioni
+            ],
+            imports: [
+                platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
                 common_1.CommonModule,
                 compat_1.AngularFireModule.initializeApp(environment_1.environment.firebaseConfig),
